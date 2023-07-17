@@ -19,6 +19,7 @@ library(ggpubr)
 library(ggrepel)
 library(openxlsx)
 
+#parseo data temperatura, salinidad de netcdf a df
 sal_temp_0m="salinidad superficial.nc"
 
 n=nc_open(sal_temp_0m)
@@ -49,18 +50,16 @@ theta$Longitud=as.numeric(as.character(theta$Longitud))
 theta$DATE=as.Date(theta$DATE)
 theta=as_tibble(theta)
 
-#
+
+#df promedio
 theta=theta%>% mutate(month = month(DATE), year=year(DATE))
 theta=na.omit(theta)
-
-
-
 
 
 ODV_colours <- c("#feb483", "#d31f2a", "#ffc000", "#27ab19", "#0db5e6", "#7139fe", "#d16cfa")
 ODV_colours=rev(ODV_colours)
 puer=read.xlsx("puertos10.xlsx",1)
-puer=puer%>%filter(Puerto != "OcoÒa")
+puer=puer%>%filter(Puerto != "Oco√±a")
 
 
 
