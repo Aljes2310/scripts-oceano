@@ -12,7 +12,7 @@ library(MBA)
 whatis=ed_search("NCEP Global Forecast System")
 
 info("ncep_global_lon180")     
-"https://coastwatch.pfeg.noaa.gov/erddap/griddap/NCEP_Global_Best.graph"
+#"https://coastwatch.pfeg.noaa.gov/erddap/griddap/NCEP_Global_Best.graph"
 
 lon = c(-90,-70)
 
