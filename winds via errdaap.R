@@ -14,8 +14,6 @@ whatis=ed_search("NCEP Global Forecast System")
 info("ncep_global_lon180")     
 "https://coastwatch.pfeg.noaa.gov/erddap/griddap/NCEP_Global_Best.graph"
 
-setwd("Z:/1_Acústica/argos manuales/")
-
 lon = c(-90,-70)
 
 lat =  c(-20,0)
@@ -57,7 +55,7 @@ library(ggrepel)
 library(openxlsx)
 
 
-puer = read.xlsx("puertos10.xlsx", 1)
+#puer = read.xlsx("puertos10.xlsx", 1)
 
 
 aoi = spData::world %>% 
@@ -91,9 +89,9 @@ ikenai_bordeline_df=na.omit(ikenai_bordeline_df)
           axis.text = element_text(size = 9, colour = 1),
           panel.grid = element_line(colour = NA), axis.title.x = element_text(vjust = -8),  
           axis.title.y = element_text(vjust = -8)) +
-    geom_point(data = puer,aes(x = X,y = Y,label = Puerto), size = 4.5, color = 'red', alpha = .15) +
-    geom_text_repel(data = puer ,aes(x = X,y = Y,label = Puerto),
-                    nudge_x=1.2, nudge_y=0.1 ,size=3)+
+    #geom_point(data = puer,aes(x = X,y = Y,label = Puerto), size = 4.5, color = 'red', alpha = .15) +
+    #geom_text_repel(data = puer ,aes(x = X,y = Y,label = Puerto),
+    #                nudge_x=1.2, nudge_y=0.1 ,size=3)+
     labs(x = "", y = "")
   
   
